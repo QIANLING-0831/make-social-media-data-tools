@@ -1,10 +1,12 @@
 # Social Media Data Tools
 
-用于整理、导出社交媒体公开数据的 Skill 集合。
+用于整理、校验和导出社交媒体公开数据的 Skill 集合。本仓库基于
+[jinchenma94/social-media-data-tools](https://github.com/jinchenma94/social-media-data-tools)
+继续改进，并保留上游 Git 历史。
 
 目前包含：
 
-- `douyin-transcript-exporter`：导出抖音视频的标题、文案、互动数据与完整逐字稿；可选写入飞书多维表格，或保存到本地。
+- `douyin-transcript-exporter`：导出抖音视频的标题、文案、互动数据与完整逐字稿；支持稳定主键去重、失败状态记录、断点续跑、飞书增量写入，以及经过校验的本地 Markdown/JSON 输出。
 
 ## 使用前提
 
@@ -16,17 +18,28 @@
 
 ## 本地输出
 
-用户明确选择不写入飞书多维表格时，结果会保存到本地：
+选择本地输出时，结果会保存为：
 
 ```text
 douyin_data/
 └── {博主昵称}_{采集日期}_{视频数量}条/
     ├── 01_{视频ID}.md
     ├── 02_{视频ID}.md
-    └── _all.json  # 可选汇总文件
+    └── _all.json  # 规范化后的汇总数据
 ```
 
-每个 Markdown 文件包含视频基本信息、介绍或文案、选题方向、主题总结和逐字稿。
+每个 Markdown 文件包含视频基本信息、介绍或文案、选题方向、主题总结、逐字稿及其状态。仓库自带零依赖校验/导出脚本：
+
+```bash
+python skills/douyin-transcript-exporter/scripts/export_local.py input.json --validate-only
+python skills/douyin-transcript-exporter/scripts/export_local.py input.json --output-root douyin_data
+```
+
+运行仓库测试：
+
+```bash
+python -m unittest discover -s tests -v
+```
 
 ## 使用方式
 
@@ -36,6 +49,18 @@ douyin_data/
 
 ```text
 请打开下面的 GitHub 仓库，找到其中的 douyin-transcript-exporter Skill，阅读相关文件并完成安装：
-[https://github.com/jinchenma94/social-media-data-tools](https://github.com/jinchenma94/social-media-data-tools)
+https://github.com/QIANLING-0831/make-social-media-data-tools
 安装完成后，请告诉我安装结果。
 ```
+
+## 主要改进
+
+- 以 `video_id` 作为稳定主键，统一短链、带查询参数链接和标准链接的去重行为。
+- 明确区分逐字稿成功、未请求、无口播和失败，失败原因不再混入正文。
+- 对互动数、日期、AI 扩展字段和占位内容执行自动质量检查。
+- 本地导出遇到同名批次时自动创建新目录，不覆盖既有结果。
+- GitHub Actions 自动运行单元测试和 Python 语法检查。
+
+## 上游与许可
+
+上游仓库目前未提供明确的开源许可证。本仓库保留原提交历史与署名；使用、修改或再分发前，请自行确认已获得相应授权。
