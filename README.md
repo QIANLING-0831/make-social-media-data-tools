@@ -4,7 +4,7 @@
 
 <p align="center">把公开视频信息与逐字稿整理为结构化数据，支持本地导出与飞书工作流。</p>
 
-<p align="center"><img src="https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-f472b6?style=flat-square&amp;labelColor=172033" alt="docs: 中文"> <img src="https://img.shields.io/badge/maintainer-QIANLING-0831-f472b6?style=flat-square&amp;labelColor=172033" alt="maintainer: QIANLING-0831"> </p>
+<p align="center"><img src="https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-f472b6?style=flat-square&amp;labelColor=172033" alt="docs: 中文"> <img src="https://img.shields.io/badge/maintainer-QIANLING--0831-f472b6?style=flat-square&amp;labelColor=172033" alt="maintainer: QIANLING-0831"> </p>
 
 <p align="center"><a href="#使用前提">使用前提</a> &nbsp; · &nbsp; <a href="#本地输出">本地输出</a> &nbsp; · &nbsp; <a href="#使用方式">使用方式</a> &nbsp; · &nbsp; <a href="#主要改进">主要改进</a></p>
 
