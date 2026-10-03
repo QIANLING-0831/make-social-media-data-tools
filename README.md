@@ -1,4 +1,22 @@
-# Social Media Data Tools
+<p align="center"><img src=".github/readme/banner.svg" alt="Social Data Toolkit — 抖音逐字稿与结构化导出" width="100%"></p>
+
+<h1 align="center">Social Data Toolkit · 抖音逐字稿与结构化导出</h1>
+
+<p align="center">把公开视频信息与逐字稿整理为结构化数据，支持本地导出与飞书工作流。</p>
+
+<p align="center"><img src="https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-f472b6?style=flat-square&amp;labelColor=172033" alt="docs: 中文"> <img src="https://img.shields.io/badge/maintainer-QIANLING-0831-f472b6?style=flat-square&amp;labelColor=172033" alt="maintainer: QIANLING-0831"> </p>
+
+<p align="center"><a href="#使用前提">使用前提</a> &nbsp; · &nbsp; <a href="#本地输出">本地输出</a> &nbsp; · &nbsp; <a href="#使用方式">使用方式</a> &nbsp; · &nbsp; <a href="#主要改进">主要改进</a></p>
+
+---
+
+## 项目概览
+
+| 方向 | 内容 |
+| --- | --- |
+| **数据整理** | 稳定视频主键与标准化字段 |
+| **状态清晰** | 区分成功、未请求、无口播与失败 |
+| **本地输出** | 逐条 Markdown 与汇总 JSON |
 
 用于整理、校验和导出社交媒体公开数据的 Skill 集合。本仓库基于
 [jinchenma94/social-media-data-tools](https://github.com/jinchenma94/social-media-data-tools)
